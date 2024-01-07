@@ -1,8 +1,10 @@
-import Home from './pages/home'
+import Calculator from "./pages/calculator";
+
+
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Calculator />
     </div>
   );
 }
