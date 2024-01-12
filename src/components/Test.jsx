@@ -18,8 +18,7 @@ const Test = () => {
    
 
     return ( 
-
-        <div className="flex justify-end items-center w-full h-20 px-4 text-white bg-black/75  fixed z-10">
+        <div className="flex justify-end items-center w-full h-20 px-4 text-white bg-black fixed">
             <ul className="hidden md:flex">
                 {sides.map(({id,name}) => (
                     <a href='a' className='px-10 uppercase' key={id}>{name}</a>
@@ -40,8 +39,7 @@ const Test = () => {
               key={id}
               to={path}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
-
-
+              activeClassName="text-white"
             >
               {name}
             </a>

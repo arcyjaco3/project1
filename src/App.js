@@ -1,5 +1,5 @@
-import Calculator from "./pages/calculator";
 
+import Calculator from './pages/calculator'
 
 function App() {
   return (
