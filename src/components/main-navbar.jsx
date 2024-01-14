@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { FaBars } from 'react-icons/fa';
+import {Link} from 'react-router-dom'
 import '../assets/styles/navbar.css'
 
 const sides = [
@@ -36,7 +37,7 @@ const Test = () => {
       {nav && (
         <ul className={`flex flex-col justify-center items-center absolute top-20 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500 duration-300 ${nav ? 'slide-right' : 'slide-left'}`}>
           {sides.map(({ id, name, path }) => (
-            <a
+            <Link
               key={id}
               to={path}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
@@ -44,7 +45,7 @@ const Test = () => {
 
             >
               {name}
-            </a>
+            </Link>
           ))}
         </ul>
             )}

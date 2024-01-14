@@ -1,6 +1,7 @@
 import React from 'react'
-import MainNavbar from '../components/main-navbar'
-import About from './About'
+// import MainNavbar from '../components/main-navbar'
+// import About from './About'
+import Login from './pages/login'
 
 
 
@@ -11,10 +12,10 @@ const Calculator = () => {
 
     return (
         <div className=" w-full  text-white ">
-                <MainNavbar />
+                {/* <MainNavbar /> */}
                 {/* <Navbar /> */}
                 {/* <Test/> */}
-                <About/>
+                <Login/>
 
         </div>
      );
