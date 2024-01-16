@@ -1,33 +1,39 @@
+
 import React, { useState } from 'react';
 import imageBackground from '../assets/images/gym3.jpg'
 import {auth} from '../data/firebase.js/'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {useNavigate} from 'react-router-dom'
 
 
-const Login = () => {
+
+
+
+const Register = () => {
 
     const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
 
-
-    
-    const Login = async () => {
+    const Register = async () => {
         try{
-            const user = await signInWithEmailAndPassword(
+            const user = createUserWithEmailAndPassword(
                 auth,
                 email,
-                password
-            );
+                password,
+            )
+            
             console.log(user)
             navigate('/home')
         }
         catch(err){
-            console.log(err.message)
+            console.log(err.message);
         }
     }
+  
+
     
 
     return (
@@ -60,14 +66,26 @@ const Login = () => {
                             onChange={(e)=> setPassword(e.target.value)}
                         />
                     </div>
-                    
+                    <div className="mb-6">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password-confirm">
+                            Confirm Password
+                        </label>
+                        <input
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            id="password-confirm"
+                            type="password"
+                            placeholder="Confirm Password"
+                            value={confirmPassword}
+                            onChange={(e)=> setConfirmPassword(e.target.value)}
+                        />
+                    </div>
                     <div className="flex items-center justify-center">
                         <button
                             className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
-                            onClick={Login}
+                            onClick={Register}
                         >
-                            Login
+                            Register
                         </button>
                     </div>
                 </form>
@@ -82,5 +100,4 @@ const Login = () => {
     );
 };
 
-export default Login;
-
+export default Register;
