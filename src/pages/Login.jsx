@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import imageBackground from '../assets/images/gym3.jpg'
-import {auth} from '../data/firebase.js/'
+import {auth} from '../data/firebase.js'
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 
 const Login = () => {
@@ -14,20 +14,16 @@ const Login = () => {
 
 
     
-    const Login = async () => {
-        try{
-            const user = await signInWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
-            console.log(user)
-            navigate('/home')
+    const handleLogin = async () => {
+        try {
+          const userCredential = await signInWithEmailAndPassword(auth, email, password);
+          const user = userCredential.user;
+          console.log(user);
+          navigate('/home');
+        } catch (err) {
+          console.error(err.message);
         }
-        catch(err){
-            console.log(err.message)
-        }
-    }
+      };
     
 
     return (
@@ -65,17 +61,17 @@ const Login = () => {
                         <button
                             className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
-                            onClick={Login}
+                            onClick={handleLogin}
                         >
                             Login
                         </button>
                     </div>
                 </form>
                 <p className="text-center text-gray-500 text-xs">
-                    Already Create an Account?{' '}
-                    <a className="text-blue-500 hover:text-blue-700" href="#">
+                    You don't have account{' '}
+                    <Link to='/register' className="text-blue-500 hover:text-blue-700">
                         Login
-                    </a>
+                    </Link>
                 </p>
             </div>
         </div>

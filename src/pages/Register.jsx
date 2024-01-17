@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import imageBackground from '../assets/images/gym3.jpg'
-import {auth} from '../data/firebase.js/'
+import {auth} from '../data/firebase.js'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 
 
@@ -91,9 +91,9 @@ const Register = () => {
                 </form>
                 <p className="text-center text-gray-500 text-xs">
                     Already Create an Account?{' '}
-                    <a className="text-blue-500 hover:text-blue-700" href="#">
+                    <Link to={'/login'} className="text-blue-500 hover:text-blue-700">
                         Login
-                    </a>
+                    </Link>
                 </p>
             </div>
         </div>
