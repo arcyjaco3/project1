@@ -5,6 +5,7 @@ import About from './pages/About'
 import Home from './pages/Home'
 import Account from './pages/Account'
 
+
 function App() {
   return (
     // <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/about' element={<About />} />
         <Route path='/account' element={<Account />} />
+
       </Routes>
     </Router>
   );
