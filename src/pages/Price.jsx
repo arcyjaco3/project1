@@ -3,10 +3,10 @@ import imageBackground from '../assets/images/gym1.jpg';
 
 const cardsData = [
     {
-        title: 'Free',
-        price: '$0',
+        title: 'Jednorazowy Wstęp',
+        price: '20zł',
         storage: '200 GB',
-        description: ['Send up to 2 GB', 'No need to verify'],
+        description: ['Wejście jednorazowe na strefe cardio oraz strefe siłową'],
         buttonText: 'Get started',
         className: 'bg-blue-700 text-white',
     },
